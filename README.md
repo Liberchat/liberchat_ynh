@@ -130,4 +130,4 @@ Merci de faire vos pull requests sur la [branche `testing`](https://github.com/L
 
 [![Anticapitaliste](https://img.shields.io/badge/Anticapitaliste-✊-red?style=for-the-badge)](#)
 [![Logiciel Libre](https://img.shields.io/badge/Logiciel_Libre-100%25-black?style=for-the-badge)](#)
-[![Anarcho-syndicaliste](https://img.shields.io/badge/Anarcho--syndicaliste-Noir_&_Rouge-black?style=for-the-badge&labelColor=ff2800)](#)
+[![Anarcho-syndicaliste](https://img.shields.io/badge/Anarcho--syndicaliste-Noir_&_Rouge-black?style=for-the-badge&labelColor=ff2800)](#)# liberchat_ynh

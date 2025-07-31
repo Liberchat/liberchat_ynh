@@ -1,0 +1,9 @@
+__DATA_DIR__/*.log {
+	weekly
+	missingok
+	rotate 52
+	compress
+	delaycompress
+	notifempty
+	create 640 __APP__ __APP__
+}

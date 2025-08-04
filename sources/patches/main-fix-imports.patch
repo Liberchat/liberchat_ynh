@@ -9,11 +9,11 @@
 -import VideoCall from './VideoCall';
 -import UserList from './UserList';
 -import Header from './Header';
-+import WelcomeScreen from './components/WelcomeScreen';
-+import ChatMessage from './components/ChatMessage';
-+import ChatInput from './components/ChatInput';
-+import VideoCall from './components/VideoCall';
-+import UserList from './components/UserList';
-+import Header from './components/Header';
++import { WelcomeScreen } from './components/WelcomeScreen';
++import { ChatMessage } from './components/ChatMessage';
++import { ChatInput } from './components/ChatInput';
++import { VideoCall } from './components/VideoCall';
++import { UserList } from './components/UserList';
++import { Header } from './components/Header';
  
  interface Message {

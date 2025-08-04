@@ -5,7 +5,7 @@ name = "Liberchat"
 description.en = "A real-time encrypted chat application for digital communes"
 description.fr = "Une application de chat chiffré en temps réel pour les communes numériques"
 
-version = "6.1.18~ynh1"
+version = "6.1.19~ynh1"
 
 maintainers = ["Liberchat Community"]
 
@@ -43,8 +43,8 @@ type = "user"
 [resources]
 [resources.sources]
 [resources.sources.main]
-url = "https://github.com/AnARCHIS12/Liberchat/archive/refs/heads/main.tar.gz"
-sha256 = "91fbaee0663205ef7d9926af240cdb02c4d482af4dd97e8bba77df89ece601ad"
+url = "https://github.com/AnARCHIS12/Liberchat/archive/refs/tags/v6.1.19.tar.gz"
+sha256 = "auto"
 
 [resources.system_user]
 

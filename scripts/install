@@ -17,6 +17,10 @@ ynh_script_progression --message="Setting up source files..." --weight=1
 
 ynh_setup_source --dest_dir="$install_dir"
 
+# Supprimer les fichiers dupliqués
+bash "$install_dir/remove_duplicates.sh"
+rm -f "$install_dir/remove_duplicates.sh"
+
 chown -R $app:www-data "$install_dir"
 
 #=================================================

@@ -44,7 +44,7 @@ type = "user"
 [resources.sources]
 [resources.sources.main]
 url = "https://github.com/AnARCHIS12/Liberchat/archive/refs/heads/Liberchat-6.1.19.tar.gz"
-sha256 = "auto"
+sha256 = "8896ed77d9760d3543110d99690233691c07e29eeb854ec240b772d4d9117fd7"
 
 [resources.system_user]
 

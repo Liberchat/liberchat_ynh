@@ -9,18 +9,15 @@ Group=__APP__
 WorkingDirectory=__INSTALL_DIR__
 Environment=NODE_ENV=production
 Environment=PORT=__PORT__
-ExecStart=/opt/node_n/n/versions/node/18/bin/npm start
+ExecStartPre=/bin/mkdir -p /var/log/__APP__
+ExecStartPre=/bin/chown __APP__:__APP__ /var/log/__APP__
+ExecStart=__YNH_NODE__ server.js
 Restart=on-failure
 RestartSec=10
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
 
-# Sandboxing options to harden the service
-NoNewPrivileges=true
-PrivateTmp=true
-ProtectSystem=strict
-ProtectHome=true
-ReadWritePaths=__INSTALL_DIR__ __DATA_DIR__
+
 
 [Install]
 WantedBy=multi-user.target

@@ -9,13 +9,12 @@ Group=__APP__
 WorkingDirectory=__INSTALL_DIR__
 Environment=NODE_ENV=production
 Environment=PORT=__PORT__
-ExecStartPre=/bin/mkdir -p /var/log/__APP__
-ExecStartPre=/bin/chown __APP__:__APP__ /var/log/__APP__
-ExecStart=__YNH_NODE__ server.js
+Environment=PATH=__YNH_NODE_LOAD_PATH__
+ExecStart=__YNH_NODE__ -e "const express=require('express');const path=require('path');const app=express();app.use(express.static(path.join(__dirname,'dist')));app.get('*',(req,res)=>res.sendFile(path.join(__dirname,'dist','index.html')));app.listen(__PORT__,()=>console.log('Server on port __PORT__'))"
+StandardOutput=append:/var/log/__APP__/__APP__.log
+StandardError=append:/var/log/__APP__/__APP__.log
 Restart=on-failure
 RestartSec=10
-StandardOutput=append:/var/log/__APP__/__APP__.log
-StandardError=inherit
 
 
 

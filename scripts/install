@@ -30,6 +30,14 @@ ynh_script_progression --message="Adding system configurations..." --weight=1
 
 ynh_add_nginx_config
 
+# Create log directory
+mkdir -p "/var/log/$app"
+chown $app:$app "/var/log/$app"
+
+# Create log directory
+mkdir -p "/var/log/$app"
+chown $app:$app "/var/log/$app"
+
 ynh_add_systemd_config
 
 yunohost service add $app --description="Liberchat encrypted chat" --log="/var/log/$app/$app.log"
@@ -44,7 +52,8 @@ pushd "$install_dir"
 	# Fix for ARM64 rollup issue
 	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH rm -rf node_modules package-lock.json
 	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH npm install --production
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH npm run build || echo 'Build failed, using fallback'
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH npm install express
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH npm run build
 popd
 
 #=================================================

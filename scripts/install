@@ -53,7 +53,7 @@ pushd "$install_dir"
 	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH rm -rf node_modules package-lock.json
 	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH npm install --production
 	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH npm install express
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH npm run build
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH npm run build -- --base=/liberchat/
 popd
 
 #=================================================

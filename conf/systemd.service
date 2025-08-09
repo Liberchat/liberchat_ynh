@@ -10,7 +10,7 @@ WorkingDirectory=__INSTALL_DIR__
 Environment=NODE_ENV=production
 Environment=PORT=__PORT__
 Environment=PATH=__YNH_NODE_LOAD_PATH__
-ExecStart=__YNH_NODE__ -e "const express=require('express');const path=require('path');const app=express();app.use('__PATH__',express.static('dist'));app.get('__PATH__*',(req,res)=>res.sendFile(path.resolve('dist/index.html')));app.listen(__PORT__,()=>console.log('Server on port __PORT__'))"
+ExecStart=__YNH_NODE__ -e "const express=require('express');const path=require('path');const app=express();app.use('__PATH__',express.static('dist'));app.get('__PATH__',(req,res)=>res.sendFile(path.resolve('dist/index.html')));app.get('__PATH__/*',(req,res)=>res.sendFile(path.resolve('dist/index.html')));app.get('/',(req,res)=>res.redirect('__PATH__/'));app.listen(__PORT__,()=>console.log('Server on port __PORT__'))"
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=append:/var/log/__APP__/__APP__.log
 Restart=on-failure

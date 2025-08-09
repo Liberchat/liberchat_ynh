@@ -5,7 +5,7 @@ name = "Liberchat"
 description.en = "A real-time encrypted chat application for digital communes"
 description.fr = "Une application de chat chiffré en temps réel pour les communes numériques"
 
-version = "6.1.19~ynh1"
+version = "6.1.19~ynh2"
 
 maintainers = ["Liberchat Community"]
 

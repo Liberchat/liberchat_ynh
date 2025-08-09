@@ -17,6 +17,9 @@ ynh_script_progression --message="Upgrading source files..." --weight=1
 
 ynh_setup_source --dest_dir="$install_dir" --keep=".env"
 
+# Copier le fichier vite.config.js personnalisé
+cp "$YNH_APP_BASEDIR/sources/extra_files/main/vite.config.js" "$install_dir/"
+
 chown -R $app:www-data "$install_dir"
 
 #=================================================
@@ -46,7 +49,7 @@ pushd "$install_dir"
 	# Fix for ARM64 rollup issue
 	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH rm -rf node_modules package-lock.json
 	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH npm install --production
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH npm run build
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH BASE_PATH="$path/" npm run build
 popd
 
 #=================================================
